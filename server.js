@@ -39,6 +39,7 @@ const port = Number(process.env.PORT || 3000);
 
 // ── 安全中间件 ──
 app.use(helmet({
+  strictTransportSecurity: false,
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
