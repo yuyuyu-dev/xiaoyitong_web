@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>管理员登录 — 校易通</title>
+  <meta name="description" content="校易通管理员登录入口。" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+<div class="app">
+
+  <nav class="navbar">
+    <a class="brand" href="/index.html">
+      <img src="/image/xiaoyitongLOGO.png" alt="校易通" class="logo" style="object-fit:contain;" />
+      <div><h1>校易通</h1><p>管理员后台</p></div>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html">首页</a>
+      <a href="/market.html">二手市场</a>
+    </div>
+  </nav>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <h2>管理员登录</h2>
+      <p>仅限平台管理员使用，请使用管理员账号登录。</p>
+
+      <div class="auth-form">
+        <div>
+          <label class="form-label" for="adminEmail">管理员邮箱 *</label>
+          <input class="input" id="adminEmail" type="email" autocomplete="email" />
+        </div>
+        <div>
+          <label class="form-label" for="adminPassword">密码 *</label>
+          <input class="input" id="adminPassword" type="password" autocomplete="current-password" />
+        </div>
+        <p class="error-tip" id="adminError" style="display:none;"></p>
+        <button class="primary-btn" id="adminLoginBtn">管理员登录</button>
+      </div>
+
+      <div class="auth-switch">
+        <span>普通用户？</span>
+        <a href="/login.html" style="color:var(--primary);font-weight:700;text-decoration:none;">去普通登录</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script type="module" src="/pages/admin-login.js"></script>
+</body>
+</html>

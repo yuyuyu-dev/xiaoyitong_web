@@ -1,0 +1,75 @@
+/* css/login.css — 登录 / 注册页独立样式 */
+
+.auth-wrap {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: min(460px, 100%);
+  padding: 36px 32px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.auth-card h2 {
+  font-size: 32px;
+  letter-spacing: -1.2px;
+  margin-bottom: 8px;
+}
+
+.auth-card > p {
+  color: var(--muted);
+  margin-bottom: 24px;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.auth-switch {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-switch button {
+  border: 0;
+  color: var(--primary);
+  font-weight: 900;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+.auth-switch button:hover { text-decoration: underline; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}

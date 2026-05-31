@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登录 / 注册 — 校易通</title>
+  <meta name="description" content="登录或注册校易通账号，开始校园二手交易。" />
+  <meta property="og:title" content="登录 / 注册 — 校易通" />
+  <meta property="og:description" content="登录或注册校易通账号，开始校园二手交易。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+<div class="app">
+
+  <nav class="navbar">
+    <a class="brand" href="/index.html">
+      <img src="/image/xiaoyitongLOGO.png" alt="校易通" class="logo" style="object-fit:contain;" />
+      <div><h1>校易通</h1><p>校园二手交易平台</p></div>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html">首页</a>
+      <a href="/market.html">二手市场</a>
+    </div>
+  </nav>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <h2 id="authTitle">登录账号</h2>
+      <p id="authDesc">欢迎回到校易通，请使用邮箱登录。</p>
+
+      <div class="auth-form" id="authForm">
+        <!-- 注册时显示 -->
+        <div id="nicknameField" style="display:none;">
+          <label class="form-label" for="authNickname">昵称 *</label>
+          <input class="input" id="authNickname" placeholder="例如：王同学" />
+        </div>
+        <div id="schoolField" style="display:none;">
+          <label class="form-label" for="authSchool">学校 *</label>
+          <input class="input" id="authSchool" placeholder="例如：上海海洋大学" />
+        </div>
+
+        <div>
+          <label class="form-label" for="authEmail">邮箱 *</label>
+          <input class="input" id="authEmail" type="email" placeholder="your@email.com" autocomplete="email" />
+        </div>
+        <div>
+          <label class="form-label" for="authPassword">密码 *</label>
+          <input class="input" id="authPassword" type="password" placeholder="至少 6 位" autocomplete="current-password" />
+        </div>
+        <div id="confirmPasswordField" style="display:none;">
+          <label class="form-label" for="authConfirmPassword">确认密码 *</label>
+          <input class="input" id="authConfirmPassword" type="password" placeholder="再次输入密码" autocomplete="new-password" />
+        </div>
+        <div id="authCodeRow" style="display:none; margin-bottom:18px;">
+          <label class="form-label" for="authCode">邮箱验证码 *</label>
+          <div style="display:flex;gap:10px;align-items:flex-end;">
+            <input class="input" id="authCode" placeholder="输入邮箱收到的验证码" style="flex:1;" />
+            <button class="ghost-btn" id="sendCodeBtn" type="button">发送验证码</button>
+          </div>
+          <p id="codeTip" style="margin-top:8px;font-size:13px;color:#64748b;display:none;">验证码已发送，2 分钟后可重发。</p>
+        </div>
+
+        <p class="error-tip" id="authError" style="display:none;"></p>
+
+        <button class="primary-btn" id="authBtn">登录</button>
+      </div>
+
+      <div class="auth-switch">
+        <span id="authSwitchText">还没有账号？</span>
+        <button id="authSwitchBtn">去注册</button>
+      </div>
+      <div style="text-align:center;margin-top:14px;">
+        <a href="/admin-login.html" style="color:#94a3b8;font-size:13px;text-decoration:none;">管理员登录</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script type="module" src="/pages/login.js"></script>
+</body>
+</html>

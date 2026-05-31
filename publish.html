@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>发布闲置 — 校易通</title>
+  <meta name="description" content="在校易通发布你的闲置物品，让校园闲置重新流动起来。" />
+  <meta property="og:title" content="发布闲置 — 校易通" />
+  <meta property="og:description" content="在校易通发布你的闲置物品，让校园闲置重新流动起来。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/publish.css" />
+</head>
+<body>
+<div class="app">
+
+  <nav class="navbar">
+    <a class="brand" href="/index.html">
+      <img src="/image/xiaoyitongLOGO.png" alt="校易通" class="logo" style="object-fit:contain;" />
+      <div><h1>校易通</h1><p>校园二手交易平台</p></div>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html">首页</a>
+      <a href="/market.html">二手市场</a>
+      <a href="/publish.html" class="active">发布闲置</a>
+      <a href="/messages.html">私信</a>
+      <a href="/user-center.html">我的</a>
+    </div>
+    <div class="user-chip" id="userChip">
+      <div class="avatar" id="userAvatar">游</div>
+      <div>
+        <strong id="userName">游客模式</strong>
+        <p id="userSchool" style="font-size:12px;color:#64748b;">请登录体验完整功能</p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="section-title">
+    <div>
+      <h2>发布闲置</h2>
+      <p>填写商品信息，立刻上架到二手市场。</p>
+    </div>
+  </div>
+
+  <div class="publish-wrap">
+    <div class="panel glass-card">
+      <div class="form-grid">
+
+        <!-- 图片上传 -->
+        <div class="full">
+          <label class="upload-box" id="uploadBox" for="imageInput">
+            <img id="previewImg" alt="商品预览" />
+            <div class="upload-tip">
+              <strong>点击上传商品图片</strong>
+              <span>支持 JPG / PNG / WebP，最大 5MB</span>
+            </div>
+          </label>
+          <input type="file" id="imageInput" accept="image/*" hidden />
+          <div class="upload-progress" id="uploadProgress">
+            <div class="upload-progress-bar" id="uploadProgressBar"></div>
+          </div>
+        </div>
+
+        <div>
+          <label class="form-label" for="publishTitle">商品标题 *</label>
+          <input class="input" id="publishTitle" placeholder="例如：罗技机械键盘 K380" />
+        </div>
+        <div>
+          <label class="form-label" for="publishPrice">价格（元）*</label>
+          <input class="input" id="publishPrice" type="number" min="0" step="0.01" placeholder="例如：129" />
+        </div>
+        <div>
+          <label class="form-label" for="publishCategory">分类 *</label>
+          <select class="select" id="publishCategory">
+            <option value="数码">数码</option>
+            <option value="书籍教材">书籍教材</option>
+            <option value="生活用品">生活用品</option>
+            <option value="运动户外">运动户外</option>
+            <option value="服饰美妆">服饰美妆</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label" for="publishCondition">成色 *</label>
+          <select class="select" id="publishCondition">
+            <option value="全新">全新</option>
+            <option value="九成新">九成新</option>
+            <option value="八成新">八成新</option>
+            <option value="七成新">七成新</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label class="form-label" for="publishLocation">交易地点 *</label>
+          <input class="input" id="publishLocation" placeholder="例如：图书馆门口 / 宿舍楼下 / 食堂二楼" />
+        </div>
+        <div class="full">
+          <label class="form-label" for="publishDesc">商品描述 *</label>
+          <textarea class="textarea" id="publishDesc" placeholder="购买时间、使用情况、配件、议价空间等"></textarea>
+        </div>
+
+        <button class="primary-btn full" id="publishBtn">确认发布</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script type="module" src="/pages/publish.js"></script>
+</body>
+</html>

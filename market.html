@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>二手市场 — 校易通</title>
+  <meta name="description" content="浏览校易通二手市场，搜索、筛选、排序各类校园闲置商品。" />
+  <meta property="og:title" content="二手市场 — 校易通" />
+  <meta property="og:description" content="浏览校易通二手市场，搜索、筛选、排序各类校园闲置商品。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/market.css" />
+</head>
+<body>
+<div class="app">
+
+  <nav class="navbar">
+    <a class="brand" href="/index.html">
+      <img src="/image/xiaoyitongLOGO.png" alt="校易通" class="logo" style="object-fit:contain;" />
+      <div><h1>校易通</h1><p>校园二手交易平台</p></div>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html">首页</a>
+      <a href="/market.html" class="active">二手市场</a>
+      <a href="/publish.html">发布闲置</a>
+      <a href="/messages.html">私信</a>
+      <a href="/user-center.html">我的</a>
+    </div>
+    <div class="user-chip" id="userChip">
+      <div class="avatar" id="userAvatar">游</div>
+      <div>
+        <strong id="userName">游客模式</strong>
+        <p id="userSchool" style="font-size:12px;color:#64748b;">请登录体验完整功能</p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="section-title">
+    <div>
+      <h2>二手市场</h2>
+      <p>搜索、分类、价格排序、成色筛选一应俱全。</p>
+    </div>
+    <a href="/publish.html" class="primary-btn">+ 发布商品</a>
+  </div>
+
+  <div class="toolbar">
+    <input  class="input"  id="searchInput"    placeholder="搜索：教材、电脑、耳机、自行车…" />
+    <select class="select" id="categoryFilter">
+      <option value="">全部分类</option>
+      <option value="数码">数码</option>
+      <option value="书籍教材">书籍教材</option>
+      <option value="生活用品">生活用品</option>
+      <option value="运动户外">运动户外</option>
+      <option value="服饰美妆">服饰美妆</option>
+    </select>
+    <select class="select" id="conditionFilter">
+      <option value="">全部成色</option>
+      <option value="全新">全新</option>
+      <option value="九成新">九成新</option>
+      <option value="八成新">八成新</option>
+      <option value="七成新">七成新</option>
+    </select>
+    <select class="select" id="sortFilter">
+      <option value="new">最新发布</option>
+      <option value="priceAsc">价格↑</option>
+      <option value="priceDesc">价格↓</option>
+      <option value="hot">热度优先</option>
+    </select>
+  </div>
+
+  <div class="product-grid" id="marketProducts">
+    <div class="empty">加载中…</div>
+  </div>
+
+</div>
+
+<div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-label="商品详情">
+  <div class="modal-card" id="detailCard"></div>
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script type="module" src="/pages/market.js"></script>
+</body>
+</html>

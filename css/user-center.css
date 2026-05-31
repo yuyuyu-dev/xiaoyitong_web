@@ -1,0 +1,81 @@
+.dashboard { display: grid; grid-template-columns: 300px minmax(0,1fr); gap: 20px; }
+.profile-card {
+  border-radius: 30px; padding: 28px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.86), rgba(255,255,255,0.56));
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.profile-avatar-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.profile-avatar {
+  width: 86px; height: 86px; display: grid; place-items: center;
+  border-radius: 26px; color: white; font-size: 34px; font-weight: 950;
+  background: linear-gradient(135deg, var(--primary), #111827);
+  overflow: hidden; object-fit: cover; flex-shrink: 0;
+}
+.profile-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 26px; }
+.avatar-upload-btn {
+  padding: 8px 14px; border-radius: 12px;
+  font-size: 13px; font-weight: 700;
+  color: var(--primary); background: rgba(79,70,229,0.1);
+  cursor: pointer; border: none; white-space: nowrap;
+}
+.avatar-upload-btn:hover { color: white; background: var(--primary); }
+.profile-card h3 { font-size: 26px; margin-bottom: 6px; }
+.profile-school { color: var(--primary); font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.profile-card p  { color: var(--muted); line-height: 1.7; font-size: 14px; }
+
+/* 编辑模式 */
+.edit-field { margin-bottom: 14px; }
+.edit-field label { display: block; font-size: 13px; font-weight: 800; color: #475569; margin-bottom: 6px; }
+.edit-field .input, .edit-field .textarea { font-size: 14px; }
+.edit-field .textarea { min-height: 80px; }
+.edit-actions { display: flex; gap: 10px; margin-top: 20px; }
+.edit-actions button { flex: 1; }
+
+.tabs { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.tabs button {
+  border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px;
+  cursor: pointer; font-weight: 800; background: white; color: #475569;
+}
+.tabs button.active { color: white; border-color: transparent; background: linear-gradient(135deg, var(--primary), var(--accent)); }
+.list { display: grid; gap: 12px; }
+.list-item {
+  display: grid; grid-template-columns: 88px 1fr auto; align-items: center;
+  gap: 14px; padding: 12px; border-radius: 20px;
+  background: white; border: 1px solid var(--line);
+}
+.list-item > img { width: 88px; height: 68px; object-fit: cover; border-radius: 16px; }
+.list-item h4  { font-size: 16px; margin-bottom: 6px; }
+.list-item p   { color: var(--muted); font-size: 13px; }
+@media (max-width: 900px) { .dashboard { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .list-item { grid-template-columns: 72px 1fr; } .list-item .actions { grid-column: 1 / -1; } }
+
+/* 已卖出印章 */
+.list-item.sold { opacity: 0.7; }
+.list-item-img-wrap { position: relative; width: 88px; height: 68px; flex-shrink: 0; }
+.list-item-img-wrap img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+.sold-stamp {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg);
+  color: #dc2626; border: 3px solid #dc2626; padding: 4px 12px;
+  font-size: 14px; font-weight: 900; border-radius: 6px;
+  background: rgba(255,255,255,0.85); pointer-events: none; white-space: nowrap;
+}
+.removed-stamp {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg);
+  color: #7c2d12; border: 3px solid #ea580c; padding: 4px 12px;
+  font-size: 14px; font-weight: 900; border-radius: 6px;
+  background: rgba(255,255,255,0.85); pointer-events: none; white-space: nowrap;
+}
+
+/* 子标签（我的交易） */
+.sub-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.sub-tabs button {
+  border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px;
+  cursor: pointer; font-weight: 700; background: white; color: #475569; font-size: 13px;
+}
+.sub-tabs button.active { color: white; border-color: transparent; background: linear-gradient(135deg, var(--primary), var(--accent)); }
+
+/* 交易状态标签 */
+.tx-status {
+  display: inline-block; padding: 4px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; color: #16a34a; background: #dcfce7;
+}

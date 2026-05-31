@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>校易通 — 校园二手交易平台</title>
+  <meta name="description" content="校易通是面向大学生的校园二手交易平台，支持商品展示、发布闲置、收藏、搜索筛选、私信沟通。" />
+  <meta property="og:title" content="校易通 — 校园二手交易平台" />
+  <meta property="og:description" content="面向大学生的二手交易平台：商品展示、发布闲置、收藏、搜索筛选、私信沟通一站搞定。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/image/xiaoyitongLOGO.png" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/market.css" />
+</head>
+<body>
+
+<!-- ═══ Preloader ═══ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo">
+      <div class="logo" style="width:64px;height:64px;font-size:26px;border-radius:20px;">CL</div>
+    </div>
+    <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+    <p class="preloader-text">校易通 · 加载中</p>
+  </div>
+</div>
+
+<div class="app" id="app">
+
+  <!-- ═══ 导航栏 ═══ -->
+  <nav class="navbar">
+    <a class="brand" href="/index.html">
+      <img src="/image/xiaoyitongLOGO.png" alt="校易通" class="logo" style="object-fit:contain;" />
+      <div>
+        <h1>校易通</h1>
+        <p>校园二手交易平台</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html" class="active">首页</a>
+      <a href="/market.html">二手市场</a>
+      <a href="/publish.html">发布闲置</a>
+      <a href="/messages.html">私信</a>
+      <a href="/user-center.html">我的</a>
+    </div>
+    <div class="user-chip" id="userChip">
+      <div class="avatar" id="userAvatar">游</div>
+      <div>
+        <strong id="userName">游客模式</strong>
+        <p id="userSchool" style="font-size:12px;color:#64748b;">请登录体验完整功能</p>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO — 全屏视觉冲击
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- 装饰背景 -->
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">
+        <span class="badge-dot"></span>
+        本小组专为高校师生打造
+      </div>
+
+      <h2 class="hero-headline" id="heroHeadline">
+        <span class="hero-line">让校园闲置</span>
+        <span class="hero-line">重新<span class="gradient-text">流动起来</span></span>
+      </h2>
+
+      <p class="hero-desc" id="heroDesc">
+        面向大学生的一站式二手交易社区 —— 发布闲置、搜索好物、私信沟通、安全交易。<br>
+        让每一件校园闲置，找到下一位主人。
+      </p>
+
+      <div class="hero-actions" id="heroActions">
+        <a href="/market.html" class="primary-btn hero-cta">
+          <span>立即逛市场</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/publish.html" class="ghost-btn">发布我的闲置</a>
+        <a href="/login.html" class="ghost-btn" id="loginBtn">登录 / 注册</a>
+      </div>
+
+      <!-- Hero 数据条 -->
+      <div class="hero-stats" id="heroStats">
+        <div class="hero-stat">
+          <strong class="counter" data-target="0" id="statGoods">0</strong>
+          <span>在售商品</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <strong class="counter" data-target="0" id="statUsers">0</strong>
+          <span>注册用户</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <strong class="counter" data-target="0" id="statDeals">0</strong>
+          <span>模拟成交</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <strong class="counter" data-target="0" id="statFavs">0</strong>
+          <span>我的收藏</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero 右侧视觉 -->
+    <div class="hero-visual" id="heroVisual">
+      <div class="hero-card-stack">
+        <div class="floating-card fc-1">
+          <div class="fc-icon">📦</div>
+          <div class="fc-text">
+            <strong>闲置教材</strong>
+            <span>¥15 · 九成新</span>
+          </div>
+        </div>
+        <div class="floating-card fc-2">
+          <div class="fc-icon">💻</div>
+          <div class="fc-text">
+            <strong>蓝牙耳机</strong>
+            <span>¥89 · 全新</span>
+          </div>
+        </div>
+        <div class="floating-card fc-3">
+          <div class="fc-icon">🎸</div>
+          <div class="fc-text">
+            <strong>吉他</strong>
+            <span>¥260 · 九五新</span>
+          </div>
+        </div>
+        <div class="floating-card fc-4">
+          <div class="fc-icon">🏀</div>
+          <div class="fc-text">
+            <strong>篮球</strong>
+            <span>¥35 · 八成新</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FEATURES — 平台核心优势
+  ═══════════════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="section-header">
+      <span class="section-tag">为什么选择校易通</span>
+      <h2 class="section-heading">专为校园打造的<br><span class="gradient-text">二手交易体验</span></h2>
+      <p class="section-sub">我们理解校园生活的节奏，让闲置交易变得像发朋友圈一样简单。</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card" data-feature="1">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>校园专属</h3>
+        <p>注册即绑定学校身份，交易对象都是校友。告别陌生人社交的信任焦虑，在熟悉的校园圈子里放心买卖。</p>
+      </div>
+
+      <div class="feature-card" data-feature="2">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>极速发布</h3>
+        <p>拍张照、写个价、选个分类，30 秒上架。支持多图上传、成色标注、位置标记，信息越全出手越快。</p>
+      </div>
+
+      <div class="feature-card" data-feature="3">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>即时私信</h3>
+        <p>看中了直接聊。内置私信系统支持实时沟通，买卖双方自由议价、约见面交易，沟通零延迟。</p>
+      </div>
+
+      <div class="feature-card" data-feature="4">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>智能收藏</h3>
+        <p>逛到好物先收藏，随时回来下单。热度算法帮你发现最火商品，收藏越多推荐越准。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       HOW IT WORKS — 使用流程
+  ═══════════════════════════════════════ -->
+  <section class="how-it-works" id="howItWorks">
+    <div class="section-header">
+      <span class="section-tag">三步上手</span>
+      <h2 class="section-heading">开始交易，<span class="gradient-text">比你想的简单</span></h2>
+    </div>
+
+    <div class="steps-track">
+      <div class="steps-line" id="stepsLine"></div>
+
+      <div class="step-card" data-step="1">
+        <div class="step-number">01</div>
+        <div class="step-icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <h3>注册账号</h3>
+        <p>用邮箱注册，绑定你的学校。一分钟完成，立即进入校园交易圈。</p>
+      </div>
+
+      <div class="step-card" data-step="2">
+        <div class="step-number">02</div>
+        <div class="step-icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h3>发布闲置</h3>
+        <p>拍照上传，填写价格和描述。支持 5 大分类、4 级成色，信息清晰出手快。</p>
+      </div>
+
+      <div class="step-card" data-step="3">
+        <div class="step-number">03</div>
+        <div class="step-icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>达成交易</h3>
+        <p>私信议价，线下见面交易。买卖双方互评，构建校园诚信交易圈。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PLATFORM STATS — 实时数据
+  ═══════════════════════════════════════ -->
+  <section class="platform-stats" id="platformStats">
+    <div class="stats-card">
+      <div class="stats-header">
+        <h2>平台<span class="gradient-text">实时数据</span></h2>
+        <p>数据来源于平台真实运行</p>
+      </div>
+      <div class="stats-row">
+        <div class="stat-block">
+          <div class="stat-num counter" data-target="0" id="statGoods2">0</div>
+          <div class="stat-label">在售商品</div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:0%" id="barGoods"></div></div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num counter" data-target="0" id="statUsers2">0</div>
+          <div class="stat-label">注册用户</div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:0%" id="barUsers"></div></div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num counter" data-target="0" id="statDeals2">0</div>
+          <div class="stat-label">模拟成交</div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:0%" id="barDeals"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PRODUCTS — 精选好物
+  ═══════════════════════════════════════ -->
+  <section class="products-section" id="productsSection">
+    <div class="section-header">
+      <span class="section-tag">最新上架</span>
+      <h2 class="section-heading">精选好物，<span class="gradient-text">等你发现</span></h2>
+      <p class="section-sub">点击卡片查看详情，看中了直接联系卖家。</p>
+    </div>
+    <div class="product-grid" id="homeProducts">
+      <div class="empty">加载中…</div>
+    </div>
+    <div class="products-cta">
+      <a href="/market.html" class="ghost-btn">查看全部商品 →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA — 底部号召
+  ═══════════════════════════════════════ -->
+  <section class="cta-section" id="ctaSection">
+    <div class="cta-card">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+      <h2>准备好让闲置<span class="gradient-text">流动起来</span>了吗？</h2>
+      <p>加入校易通，和全国高校同学一起，让每一件闲置找到新主人。</p>
+      <div class="cta-actions">
+        <a href="/register.html" class="primary-btn cta-btn">免费注册</a>
+        <a href="/market.html" class="ghost-btn cta-btn">先逛逛看</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo" style="width:36px;height:36px;font-size:14px;border-radius:12px;">CL</div>
+        <span>校易通</span>
+      </div>
+      <p class="footer-copy">© 2026 校易通 · 校园二手交易平台 · 让闲置流动起来</p>
+      <div class="footer-links">
+        <a href="/market.html">二手市场</a>
+        <a href="/publish.html">发布闲置</a>
+        <a href="/login.html">登录注册</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- 商品详情弹窗 -->
+<div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-label="商品详情">
+  <div class="modal-card" id="detailCard"></div>
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<!-- GSAP + ScrollTrigger (local, CSP-safe) -->
+<script src="/lib/vendor/gsap.min.js"></script>
+<script src="/lib/vendor/ScrollTrigger.min.js"></script>
+
+<script type="module" src="/pages/index.js"></script>
+</body>
+</html>

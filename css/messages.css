@@ -1,0 +1,44 @@
+.chat-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  height: calc(100vh - 180px);
+  min-height: 500px;
+}
+.conversation-list {
+  border-radius: 28px;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  overflow-y: auto;
+}
+.conversation {
+  padding: 16px; border-bottom: 1px solid var(--line);
+  cursor: pointer; transition: 0.2s ease;
+}
+.conversation:hover, .conversation.active { background: rgba(79,70,229,0.08); }
+.conversation strong { display: block; margin-bottom: 4px; font-size: 15px; }
+.conversation span   { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+.chat-main {
+  border-radius: 28px; background: rgba(255,255,255,0.72);
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.chat-header {
+  padding: 18px; border-bottom: 1px solid var(--line);
+  font-weight: 900; background: rgba(255,255,255,0.68); flex-shrink: 0;
+}
+.messages-box {
+  flex: 1; padding: 18px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.msg { max-width: 70%; padding: 12px 14px; border-radius: 18px; line-height: 1.6; font-size: 14px; }
+.msg.me    { align-self: flex-end; color: white; background: linear-gradient(135deg, var(--primary), var(--accent)); border-bottom-right-radius: 6px; }
+.msg.other { align-self: flex-start; background: white; border: 1px solid var(--line); border-bottom-left-radius: 6px; }
+.msg-time  { font-size: 11px; opacity: 0.72; margin-top: 4px; }
+.chat-input {
+  display: grid; grid-template-columns: 1fr 96px; gap: 10px;
+  padding: 14px; border-top: 1px solid var(--line);
+  background: rgba(255,255,255,0.68); flex-shrink: 0;
+}
+@media (max-width: 760px) { .chat-layout { grid-template-columns: 1fr; height: auto; } }

@@ -1,0 +1,4 @@
+管理员账号密码内置在数据库中（哈希加密）
+
+账号：admin1@xiaoyitong.com	密码：admin123	管理员小易
+账号：admin2@xiaoyitong.com	密码：admin123	管理员小通

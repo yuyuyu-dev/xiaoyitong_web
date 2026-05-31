@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>私信中心 — 校易通</title>
+  <meta name="description" content="在校易通私信中心与买家卖家一对一沟通。" />
+  <meta property="og:title" content="私信中心 — 校易通" />
+  <meta property="og:description" content="在校易通私信中心与买家卖家一对一沟通。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/messages.css" />
+</head>
+<body>
+<div class="app">
+
+  <nav class="navbar">
+    <a class="brand" href="/index.html">
+      <img src="/image/xiaoyitongLOGO.png" alt="校易通" class="logo" style="object-fit:contain;" />
+      <div><h1>校易通</h1><p>校园二手交易平台</p></div>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html">首页</a>
+      <a href="/market.html">二手市场</a>
+      <a href="/publish.html">发布闲置</a>
+      <a href="/messages.html" class="active">私信</a>
+      <a href="/user-center.html">我的</a>
+    </div>
+    <div class="user-chip" id="userChip">
+      <div class="avatar" id="userAvatar">游</div>
+      <div>
+        <strong id="userName">游客模式</strong>
+        <p id="userSchool" style="font-size:12px;color:#64748b;">请登录体验完整功能</p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="section-title">
+    <div><h2>私信中心</h2><p>买家与卖家一对一沟通。</p></div>
+  </div>
+
+  <div class="chat-layout">
+    <div class="conversation-list" id="conversationList">
+      <div class="empty" style="margin:16px;">加载中…</div>
+    </div>
+    <div class="chat-main">
+      <div class="chat-header" id="chatHeader">选择一个会话</div>
+      <div class="messages-box" id="messagesBox">
+        <div class="empty">暂无会话，进入商品详情后点击「联系卖家」即可发起私信。</div>
+      </div>
+      <div class="chat-input">
+        <input class="input" id="messageInput" placeholder="输入消息…" />
+        <button class="primary-btn" id="sendBtn">发送</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="/pages/messages.js"></script>
+</body>
+</html>

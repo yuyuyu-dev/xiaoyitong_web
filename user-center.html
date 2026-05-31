@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人中心 — 校易通</title>
+  <meta name="description" content="管理你的校易通账号、发布商品和收藏。" />
+  <meta property="og:title" content="个人中心 — 校易通" />
+  <meta property="og:description" content="管理你的校易通账号、发布商品和收藏。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/user-center.css" />
+  <link rel="stylesheet" href="/css/market.css" />
+</head>
+<body>
+<div class="app">
+
+  <nav class="navbar">
+    <a class="brand" href="/index.html">
+      <img src="/image/xiaoyitongLOGO.png" alt="校易通" class="logo" style="object-fit:contain;" />
+      <div><h1>校易通</h1><p>校园二手交易平台</p></div>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html">首页</a>
+      <a href="/market.html">二手市场</a>
+      <a href="/publish.html">发布闲置</a>
+      <a href="/messages.html">私信</a>
+      <a href="/user-center.html" class="active">我的</a>
+    </div>
+    <div class="user-chip" id="userChip">
+      <div class="avatar" id="userAvatar">游</div>
+      <div>
+        <strong id="userName">游客模式</strong>
+        <p id="userSchool" style="font-size:12px;color:#64748b;">请登录体验完整功能</p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="section-title">
+    <div><h2>个人中心</h2><p>管理我的发布、收藏和账号。</p></div>
+  </div>
+
+  <div class="dashboard">
+    <div class="profile-card">
+      <!-- 查看模式 -->
+      <div id="profileView">
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar" id="profileAvatar">游</div>
+        </div>
+        <h3 id="profileName">游客模式</h3>
+        <p id="profileSchool" class="profile-school"></p>
+        <p id="profileBio">登录后可发布商品、收藏商品、私信卖家。</p>
+        <div style="margin-top:24px; display:grid; gap:10px;">
+          <button class="ghost-btn" id="editProfileBtn" style="display:none;">编辑资料</button>
+          <a href="/login.html" class="primary-btn" id="loginLink" style="text-align:center; text-decoration:none;">登录 / 注册</a>
+          <button class="danger-btn" id="logoutBtn" style="display:none;">退出登录</button>
+        </div>
+      </div>
+      <!-- 编辑模式 -->
+      <div id="profileEdit" style="display:none;">
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar" id="editAvatarPreview">游</div>
+          <label class="avatar-upload-btn" for="avatarInput">更换头像</label>
+          <input type="file" id="avatarInput" accept="image/jpeg,image/png,image/webp,image/gif" style="display:none;" />
+        </div>
+        <div class="edit-field">
+          <label for="editNickname">昵称</label>
+          <input type="text" id="editNickname" class="input" maxlength="50" placeholder="你的昵称" />
+        </div>
+        <div class="edit-field">
+          <label for="editSchool">学校</label>
+          <input type="text" id="editSchool" class="input" maxlength="50" placeholder="你的学校" />
+        </div>
+        <div class="edit-field">
+          <label for="editBio">简介</label>
+          <textarea id="editBio" class="textarea" maxlength="500" placeholder="介绍一下自己吧"></textarea>
+        </div>
+        <div class="edit-actions">
+          <button class="primary-btn" id="saveProfileBtn">保存</button>
+          <button class="ghost-btn" id="cancelEditBtn">取消</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel glass-card">
+      <div class="tabs">
+        <button class="active" id="tabMyProducts" data-tab="products">我的发布</button>
+        <button id="tabFavorites" data-tab="favorites">我的收藏</button>
+        <button id="tabTransactions" data-tab="transactions">我的交易</button>
+      </div>
+      <div class="list" id="profileList">
+        <div class="empty">加载中…</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-label="商品详情">
+  <div class="modal-card" id="detailCard"></div>
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script type="module" src="/pages/user-center.js"></script>
+</body>
+</html>
