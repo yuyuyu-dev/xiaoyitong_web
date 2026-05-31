@@ -77,7 +77,7 @@ const generalLimiter = rateLimit({
 // ── 静态文件 ──
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'), { dotfiles: 'deny' }));
 app.use(express.static(__dirname, {
-  index: 'index.html',
+  index: 'splash.html',
   dotfiles: 'deny'
 }));
 
